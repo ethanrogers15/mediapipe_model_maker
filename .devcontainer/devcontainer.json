@@ -1,0 +1,30 @@
+{
+    "name": "mediapipe_model_maker-dev",
+    "dockerFile": "../Dockerfile",
+    "build": {"target": "image-nonroot"},
+    "runArgs": [
+      "--network=host",
+      "--privileged"
+    ],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/mediapipe_model_maker,type=bind",
+    "workspaceFolder": "/mediapipe_model_maker",
+    "containerEnv": { "DISPLAY": "${localEnv:DISPLAY}" },
+    "mounts": [
+      "source=${localEnv:HOME}${localEnv:USERPROFILE}/.bash_history,target=/home/vscode/.bash_history,type=bind",
+      "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind",
+      "source=/dev,target=/dev,type=bind"
+  ],
+  "postAttachCommand": "git lfs install",
+  "customizations": {
+      "vscode": {
+          "extensions": [
+              "ms-python.python",
+              "ms-vscode.cpptools-extension-pack",
+              "ms-vscode.cpptools",
+              "ms-azuretools.vscode-docker",
+              "ms-vscode.cmake-tools"
+          ]
+      }
+  }
+  }
+  
