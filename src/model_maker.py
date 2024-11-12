@@ -13,8 +13,8 @@ from mediapipe_model_maker import object_detector
 def main(args):
     
     # Bringing in dataset from example
-    train_dataset_path = "/mediapipe_model_maker/datasets/android_figurine/train"
-    validation_dataset_path = "/mediapipe_model_maker/datasets/android_figurine/validation"
+    train_dataset_path = "/mediapipe_model_maker/datasets/webcam/train"
+    validation_dataset_path = "/mediapipe_model_maker/datasets/webcam/validation"
 
     # Verifying dataset content
     with open(os.path.join(train_dataset_path, "labels.json"), "r") as f:
@@ -32,7 +32,7 @@ def main(args):
     # Retrain the model
     # Set retraining options: could be MobileNet-V2 or MobileNet-MultiHW-AVG
     spec = object_detector.SupportedModels.MOBILENET_MULTI_AVG
-    hparams = object_detector.HParams(export_dir='exported_model')
+    hparams = object_detector.HParams(export_dir='exported_model_webcam')
     options = object_detector.ObjectDetectorOptions(
         supported_model=spec,
         hparams=hparams)
