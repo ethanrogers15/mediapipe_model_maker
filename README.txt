@@ -16,6 +16,9 @@ https://github.com/ethanrogers15/project_fused
 The ROS2 environment repository is located here:
 https://github.com/ethanrogers15/project_fused_ros
 
+The ROS2 demo environment is located here:
+https://github.com/ethanrogers15/project_fused_ros_demo
+
 To run this virtual environment, you will need Docker Desktop and VSCode with
 the Remote Development & Dev Containers extensions. The virtual environments
 for Project FUSED were built on a Windows laptop, but we used WSL with Ubuntu
